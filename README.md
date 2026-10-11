@@ -1,16 +1,3 @@
-<!--
-GA3 README template.
-- Add your answers to each question's section below.
-- For each question where we want you to add your commands,
-  put the command(s) you ran in the terminal in the corresponding ```bash code block.
-- Where we want to see a command's output, there is a plain ``` code block
-  right below the command block: paste the output there.
-- You don't need to paste the contents of your scripts into this file:
-  we will look at the scripts in your `scripts` dir directly
-  (so make sure you commit them!).
-- Delete instructional comments like this one as you go.
--->
-
 # GA3 answers - <Md. Rafiqul Islam>
 
 ------------------------------------------------------------------------
@@ -28,8 +15,6 @@ GA3 README template.
 ## Part B: Basic shell scripts
 
 ### 4: Predict the output of `echo.sh`
-
-<!-- No need to paste the script: we'll look at scripts/echo.sh directly. -->
 
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`):
 
@@ -106,8 +91,6 @@ Finished
 
 ### 6: Write the `printline.sh` script
 
-<!-- No need to paste the script: we'll look at scripts/printline.sh directly. -->
-
 ### 7: Test `printline.sh` twice
 
 Test 1:
@@ -157,8 +140,6 @@ Code to run `multiqc --help` with the container:
 apptainer exec oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20 multiqc --help
 ```
 
-<!-- You don't need to paste the MultiQC help output -->
-
 The MultiQC command to run MultiQC on `results/fastqc` with output in `results/multiqc`:
 
 ```bash
@@ -166,8 +147,6 @@ apptainer exec oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518
 ```
 
 ### 10: Write the `multiqc.sh` script
-
-<!-- No need to paste the script: we'll look at scripts/multiqc.sh directly. -->
 
 ### 11: Run `multiqc.sh`
 
@@ -177,8 +156,6 @@ Code to run the script:
 bash scripts/multiqc.sh
 ```
 
-<!-- You don't need to paste the MultiQC logging output -->
-
 *Answer*: Number of FastQC reports MultiQC found: **44**
 
 *Answer*: Does that match what you expected? Why/why not?
@@ -186,15 +163,11 @@ bash scripts/multiqc.sh
 
 ### 12: Make `multiqc.sh` accept arguments, and rerun it
 
-<!-- No need to paste the script: we'll look at scripts/multiqc.sh and its Git history directly. -->
-
 Code to rerun the script:
 
 ```bash
 bash scripts/multiqc.sh results/fastqc results/multiqc
 ```
-
-<!-- No need to paste any output -->
 
 ### 13: Differences between the two MultiQC runs
 
@@ -242,15 +215,9 @@ I think the `README.md` file should be committed as a source but the `pdf` and `
 
 ### 18: Create a GitHub repository
 
-<!-- No command/output needed here -- we check your GitHub repo directly. -->
-
 ### 19: Connect your local repo to GitHub, and push
 
-<!-- No command/output needed here -- we check your GitHub repo directly. -->
-
 ### 20: Create an Issue to tag the instructors
-
-<!-- No command/output needed here -- we check your GitHub repo directly. -->
 
 ------------------------------------------------------------------------
 
@@ -260,19 +227,34 @@ I think the `README.md` file should be committed as a source but the `pdf` and `
 
 *Answer* (one insight you gained):
 
+- R2 reads have more **unique reads** and less **duplicate reads** than R1.
+
 *Answer* (one thing you're confused about):
+
+- Why does read quality differ between R1 and R2 and when to perform trimming?
 
 ### 22: Pandoc versions
 
 ```bash
-# Your command:
+module spider pandoc
 ```
 
 The output of the command(s) was:
 
-```         
+``` 
+-------------------------------------------------------------------------------------------------------------------
+  pandoc:
+-------------------------------------------------------------------------------------------------------------------
+     Versions:
+        pandoc/2.19.2
+        pandoc/3.6.4
+
+-------------------------------------------------------------------------------------------------------------------
+  For detailed information about a specific "pandoc" package (including how to load the modules) use the module's full name.        
 ```
 
 *Answer*: Is the Pandoc version available by default the most recent one?
+- **No**
 
 *Answer*: Which Pandoc version are you using after loading the module?
+- pandoc/3.6.4
