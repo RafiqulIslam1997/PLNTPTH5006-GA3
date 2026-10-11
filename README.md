@@ -146,14 +146,15 @@ S82     10dpi   cathemerium
 
 ### 8: Get a MultiQC container link
 
-*Answer*: The container link (URI) is:
+*Answer*: The container link (URI) is: 
+[bioconda::multiqc](oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20)
 
 ### 9: MultiQC's help info, and the MultiQC command
 
 Code to run `multiqc --help` with the container:
 
 ```bash
-# Your command:
+apptainer exec oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20 multiqc --help
 ```
 
 <!-- You don't need to paste the MultiQC help output -->
@@ -161,7 +162,7 @@ Code to run `multiqc --help` with the container:
 The MultiQC command to run MultiQC on `results/fastqc` with output in `results/multiqc`:
 
 ```bash
-# Your command:
+apptainer exec oras://community.wave.seqera.io/library/multiqc:1.35--562c547b518ebe20 multiqc --outdir results/multiqc results/fastqc
 ```
 
 ### 10: Write the `multiqc.sh` script
@@ -173,14 +174,15 @@ The MultiQC command to run MultiQC on `results/fastqc` with output in `results/m
 Code to run the script:
 
 ```bash
-# Your command:
+bash scripts/multiqc.sh
 ```
 
 <!-- You don't need to paste the MultiQC logging output -->
 
-*Answer*: Number of FastQC reports MultiQC found:
+*Answer*: Number of FastQC reports MultiQC found: **44**
 
 *Answer*: Does that match what you expected? Why/why not?
+- Yes, the number matched my expectation as there are `22 samples` each having two reads `R1` and `R2`.
 
 ### 12: Make `multiqc.sh` accept arguments, and rerun it
 
