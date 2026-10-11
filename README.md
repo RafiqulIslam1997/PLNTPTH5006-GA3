@@ -19,15 +19,9 @@ GA3 README template.
 
 ### 1: Create subdirs and copy files
 
-<!-- No command/output needed -- you can make dirs however you want, and the copy commands are provided. -->
-
 ### 2: Initialize a Git repository, and commit the README and `.gitignore`
 
-<!-- No command/output needed here -- we check the repo directly. -->
-
 ### 3: Commit throughout the assignment
-
-<!-- No command/output needed here -- we check your commit history directly. -->
 
 ------------------------------------------------------------------------
 
