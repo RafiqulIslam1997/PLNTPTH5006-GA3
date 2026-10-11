@@ -191,14 +191,14 @@ bash scripts/multiqc.sh
 Code to rerun the script:
 
 ```bash
-# Your command:
+bash scripts/multiqc.sh results/fastqc results/multiqc
 ```
 
 <!-- No need to paste any output -->
 
 ### 13: Differences between the two MultiQC runs
 
-*Answer*:
+*Answer*: The second run printed the `input` and `output` directory names as I added **logging message**. The results were same as the input data and settings were same but MultiQC used numbered `output` names to avoid overwriting the first run files.
 
 ------------------------------------------------------------------------
 
