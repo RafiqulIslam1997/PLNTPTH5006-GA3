@@ -33,11 +33,19 @@ GA3 README template.
 
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08`):
 
+- The command will print `Oct07` and `Oct08` and then will show an error as the third argument is missing and `set -u` is **enabled**.
+
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10`):
+
+- The command will print `Oct07`, `Oct08` and `Oct09`. The 4th argument `Oct10` will be **ignored**.
 
 *Answer* (prediction and reasoning for `bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"`):
 
+- The command will print `Oct07`, `Oct08` and `Oct09 Oct10` and then `finished` as the quotation mark makes `Oct09 Oct10` one argument.
+
 *Answer* (prediction and reasoning for `bash scripts/echo.sh results/fastqc/*.html`):
+
+- The command will print all the matching files names ended with `html` due to the use of **wild card '*'**.
 
 ### 5: Run `echo.sh` and compare with your predictions
 
@@ -47,7 +55,10 @@ bash scripts/echo.sh Oct07 Oct08
 
 The output of the command was:
 
-```         
+```
+Oct07
+Oct08
+scripts/echo.sh: line 6: $3: unbound variable
 ```
 
 ```bash
@@ -56,7 +67,11 @@ bash scripts/echo.sh Oct07 Oct08 Oct09 Oct10
 
 The output of the command was:
 
-```         
+``` 
+Oct07
+Oct08
+Oct09
+Finished        
 ```
 
 ```bash
@@ -65,7 +80,11 @@ bash scripts/echo.sh Oct07 Oct08 "Oct09 Oct10"
 
 The output of the command was:
 
-```         
+``` 
+Oct07
+Oct08
+Oct09 Oct10
+Finished        
 ```
 
 ```bash
@@ -74,10 +93,16 @@ bash scripts/echo.sh results/fastqc/*.html
 
 The output of the command was:
 
-```         
+```
+results/fastqc/S63_R1_fastqc.html
+results/fastqc/S63_R2_fastqc.html
+results/fastqc/S64_R1_fastqc.html
+Finished      
 ```
 
 *Answer*: Which output (if any) differed from your prediction, and why?
+
+- None of the outputs differed from my prediction. 
 
 ### 6: Write the `printline.sh` script
 
@@ -88,23 +113,31 @@ The output of the command was:
 Test 1:
 
 ```bash
-# Your command:
+bash scripts/printline.sh data/metadata.tsv 1
 ```
 
 The output of the command was:
 
-```         
+``` 
+sample_id       time    treatment        
 ```
 
 Test 2 (with redirection), and checking the contents of the output file:
 
 ```bash
-# Your command:
+bash scripts/printline.sh data/metadata.tsv 2 > results/metadata_line2.txt
+```
+
+And, then another command for checking file contents-
+
+```bash
+cat results/metadata_line2.txt
 ```
 
 The output of the command that checks the file contents was:
 
-```         
+``` 
+S82     10dpi   cathemerium        
 ```
 
 ------------------------------------------------------------------------
